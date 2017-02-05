@@ -1,0 +1,1 @@
+while true; do wget -nv -t 1 -T 1 -O 1 https://www.xiaoying.com/invest/list?interest=780_;haha=$(grep -B21 "立即投资" ./1 | grep "剩余金额" | tail -n +$[$(grep -B36 "立即投资" ./1 | grep "新手专享" | grep -c "")+1] | awk -F '>' '{print $3}' | awk -F '<' '{print $1}' | sed 's/,//g');echo -e "\033[41;36m$haha\033[0m";c=""; sleep $(echo "scale=3;$RANDOM / 100000 + 2;" | bc;); done;
